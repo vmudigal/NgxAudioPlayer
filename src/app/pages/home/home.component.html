@@ -1,12 +1,13 @@
 <header focusOnNavigation class="docs-header-background header mat-toolbar mat-primary" aria-label="Get started"
-  id="homepage-header">
+        id="homepage-header">
   <div class="docs-header-section">
     <div class="docs-header-headline">
       <h1 class="mat-h1">NGX Audio Player</h1>
       <h2> Audio Player for Angular</h2>
     </div>
     <div>
-      <a mat-raised-button style="text-decoration: none!important;" routerLink="/guide/getting-started">Get started</a>
+      <a mat-raised-button style="text-decoration: none!important;" routerLink="/guide/getting-started">Get
+        started</a>
     </div>
   </div>
 </header>
@@ -19,37 +20,43 @@
             <h6>Controls</h6>
             <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisplayTitle($event)" [checked]="msaapDisplayTitle"
-                class="px-3 mat-advanced-player-display-title">
+                            class="px-3 mat-advanced-player-display-title">
               </mat-checkbox>
               displayTitle: {{msaapDisplayTitle}}
             </div>
             <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisplayPlayList($event)" [checked]="msaapDisplayPlayList"
-                [disabled]="msaapPlaylist.length==1" class="px-3 mat-advanced-player-display-playlist">
+                            [disabled]="msaapPlaylist.length==1" class="px-3 mat-advanced-player-display-playlist">
               </mat-checkbox>
               displayPlayList: {{msaapDisplayPlayList}}
             </div>
             <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisablePositionSlider($event)" [checked]="msaapDisablePositionSlider"
-                class="px-3 mat-basic-player-display-title">
+                            class="px-3 mat-basic-player-display-title">
               </mat-checkbox>
               disablePositionSlider: {{msaapDisablePositionSlider}}
             </div>
             <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisplayVolumeControls($event)" [checked]="msaapDisplayVolumeControls"
-                class="px-3 mat-basic-player-display-title">
+                            class="px-3 mat-basic-player-display-title">
               </mat-checkbox>
               displayVolumeControls: {{msaapDisplayVolumeControls}}
             </div>
             <div class="d-flex flex-row px-3">
+              <mat-checkbox (change)="changeMsaapDisplayVolumeSlider($event)" [checked]="msaapDisplayVolumeSlider"
+                            class="px-3 mat-basic-player-display-title">
+              </mat-checkbox>
+              displayVolumeSlider: {{msaapDisplayVolumeSlider}}
+            </div>
+            <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisplayArtist($event)" [checked]="msaapDisplayArtist"
-                class="px-3 mat-basic-player-display-title">
+                            class="px-3 mat-basic-player-display-title">
               </mat-checkbox>
               displayArtist: {{msaapDisplayArtist}}
             </div>
             <div class="d-flex flex-row px-3">
               <mat-checkbox (change)="changeMsaapDisplayDuration($event)" [checked]="msaapDisplayDuration"
-                class="px-3 mat-basic-player-display-title" [disabled]="msaapPlaylist.length==1">
+                            class="px-3 mat-basic-player-display-title" [disabled]="msaapPlaylist.length==1">
               </mat-checkbox>
               displayDuration: {{msaapDisplayDuration}}
             </div>
@@ -61,7 +68,8 @@
             </div>
             <div class="px-3">
               <button mat-stroked-button (click)="appendTracksToPlaylist()"
-                [disabled]="appendTracksToPlaylistDisable">Append Tracks To Playlist</button>
+                      [disabled]="appendTracksToPlaylistDisable">Append Tracks To Playlist
+              </button>
             </div>
           </div>
           <div class="col">
@@ -86,12 +94,23 @@
           </div>
         </div>
         <div class="col">
-          <ngx-audio-player #player (trackEnded)="onEnded($event)" [autoPlay]="false"
-            [displayPlaylist]="msaapDisplayPlayList" [tableHeader]="msaapTableHeader" [titleHeader]="msaapTitleHeader"
-            [artistHeader]="msaapArtistHeader" [durationHeader]="msaapDurationHeader" [displayTitle]="msaapDisplayTitle"
-            [displayVolumeControls]="msaapDisplayVolumeControls" [disablePositionSlider]="msaapDisablePositionSlider"
-            [displayArtist]="msaapDisplayArtist" [displayDuration]="msaapDisplayDuration" [expanded]="true"
-            [pageSizeOptions]="pageSizeOptions" [playlist]="msaapPlaylist">
+          <ngx-audio-player
+            #player (trackEnded)="onEnded($event)"
+            [autoPlay]="false"
+            [displayPlaylist]="msaapDisplayPlayList"
+            [tableHeader]="msaapTableHeader"
+            [titleHeader]="msaapTitleHeader"
+            [artistHeader]="msaapArtistHeader"
+            [durationHeader]="msaapDurationHeader"
+            [displayTitle]="msaapDisplayTitle"
+            [disablePositionSlider]="msaapDisablePositionSlider"
+            [displayVolumeControls]="msaapDisplayVolumeControls"
+            [displayVolumeSlider]="msaapDisplayVolumeSlider"
+            [displayArtist]="msaapDisplayArtist"
+            [displayDuration]="msaapDisplayDuration"
+            [expanded]="true"
+            [pageSizeOptions]="pageSizeOptions"
+            [playlist]="msaapPlaylist">
           </ngx-audio-player>
         </div>
       </div>

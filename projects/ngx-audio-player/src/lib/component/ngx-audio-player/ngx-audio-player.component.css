@@ -2,7 +2,7 @@ mat-card, mat-slider {
     padding: 0!important;
 }
 
-button:hover, button:focus { 
+button:hover, button:focus {
     outline: 0px!important;
 }
 
@@ -100,6 +100,15 @@ table {
 }
 .ngx-pr-1, .ngx-px-1 {
     padding-right: .25rem !important;
+}
+
+.ngx-slider {
+    min-width: 64px;
+}
+
+.ngx-volume {
+    height: 42px;
+    margin-top: -6px;
 }
 
 @media (max-width: 720px) {
