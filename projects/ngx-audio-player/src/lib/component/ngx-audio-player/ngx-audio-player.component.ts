@@ -89,6 +89,45 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
     @Input()
     public endOffset = 0;
 
+    /**
+     * Allow to start the current track
+     */
+    @Input()
+    public playing() {
+        if (!this.isPlaying) {
+            setTimeout(() => {
+                this.isPlaying = true;
+                this.player.nativeElement.play();
+            }, 50);
+        }
+    }
+
+    /**
+     * Allow to pause the current track
+     */
+    @Input()
+    public pause() {
+        if (this.isPlaying) {
+            setTimeout(() => {
+                this.isPlaying = false;
+                this.player.nativeElement.pause();
+            }, 50);
+        }
+    }
+
+    /**
+     * Allow to stop the current track
+     */
+    @Input()
+    public stop() {
+        setTimeout(() => {
+            this.isPlaying = false;
+            this.player.nativeElement.pause();            
+            this.player.nativeElement.currentTime = 0;
+        }, 50);
+    }
+
+
     currTimePosChanged(event) {
         this.player.nativeElement.currentTime = event.value;
     }
@@ -290,7 +329,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
                 && (((this.currentIndex) % this.paginator.pageSize) === 0
                     || (this.currentIndex === 0))) {
                 if (this.paginator.hasPreviousPage()) {
-                    this.paginator.previousPage();       
+                    this.paginator.previousPage();
                 } else if (!this.paginator.hasPreviousPage()) {
                     this.paginator.lastPage();
                 }

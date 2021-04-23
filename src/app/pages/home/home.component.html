@@ -90,15 +90,27 @@
               </button>
             </p>
           </div>
+          <div class="col">
+            <h6>Player actions</h6>
+            <p class="px-3">
+              <button (click)="play()" mat-stroked-button>Play</button>
+            </p>
+            <p class="px-3">
+              <button (click)="pause()" mat-stroked-button>Pause</button>
+            </p>
+            <p class="px-3">
+              <button (click)="stop()" mat-stroked-button>Stop</button>
+            </p>
+          </div>
         </div>
         <div class="col">
           <ngx-audio-player #player (trackEnded)="onEnded($event)" [autoPlay]="false"
             [displayPlaylist]="msaapDisplayPlayList" [tableHeader]="msaapTableHeader" [titleHeader]="msaapTitleHeader"
             [artistHeader]="msaapArtistHeader" [durationHeader]="msaapDurationHeader" [displayTitle]="msaapDisplayTitle"
-            [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls" 
-            [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
-            [displayDuration]="msaapDisplayDuration" [expanded]="true"
-            [pageSizeOptions]="pageSizeOptions" [playlist]="msaapPlaylist">
+            [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+            [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
+            [displayDuration]="msaapDisplayDuration" [expanded]="true" [pageSizeOptions]="pageSizeOptions"
+            [playlist]="msaapPlaylist">
           </ngx-audio-player>
         </div>
       </div>

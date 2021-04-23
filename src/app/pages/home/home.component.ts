@@ -146,6 +146,7 @@ export class HomeComponent {
       this.advancedPlayer.audioPlayerService.setPlaylist(this.msaapPlaylist);
       this.appendTracksToPlaylistDisable = true;
     }
+    
   }
 
   setSingleTrack() {
@@ -179,6 +180,18 @@ export class HomeComponent {
 
   changeMsaapDisablePositionSlider(event) {
     this.msaapDisablePositionSlider = event.checked;
+  }
+
+  play() {
+    this.advancedPlayer.playing();
+  }
+
+  pause() {
+    this.advancedPlayer.pause();
+  }
+
+  stop() {
+    this.advancedPlayer.stop();
   }
   // End: Required for demo purpose
 }
